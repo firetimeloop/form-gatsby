@@ -1,0 +1,9 @@
+export const mainTextColor = "#424247";
+export const backgroundColor = "#FFFFFF";
+export const primaryButtonBgColor = "#2E8AE6";
+export const buttonShadowColor = "#2E8AE626";
+export const navItemColor = "#7B7B8C";
+export const primaryText = "#424247";
+export const portfolioBgColor = "#E1E2FE";
+export const mutedTextColor = "#BEBECC";
+export const hoverButtonBgColor = "#6FB4F8";

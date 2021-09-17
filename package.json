@@ -1,8 +1,8 @@
 {
-  "name": "my-gatsby-site",
+  "name": "my-test-gatsby-site",
   "version": "1.0.0",
   "private": true,
-  "description": "My Gatsby Site",
+  "description": "My Test Gatsby Site",
   "author": "Cyrill Vorfolomeev",
   "keywords": [
     "gatsby"
@@ -16,10 +16,15 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
-    "gatsby": "^3.13.1",
+    "gatsby": "^3.13.0",
+    "gatsby-plugin-image": "^1.13.0",
+    "gatsby-plugin-sharp": "^3.13.0",
     "gatsby-plugin-styled-components": "^4.13.0",
+    "gatsby-source-filesystem": "^3.13.0",
+    "gatsby-transformer-sharp": "^3.13.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "styled-components": "^5.3.1"
+    "styled-components": "^5.3.1",
+    "styled-components-modifiers": "^1.2.5"
   }
 }
