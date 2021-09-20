@@ -156,7 +156,7 @@ const FormSection = ({ data }) => {
       <IntroMainWrapper>
         <SectionTitle>SCHEDULE A CALL</SectionTitle>
         <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
-        <FormWrapper method="post" data-netlify="true">
+        <FormWrapper name="TestForm" method="post" data-netlify="true" action="/pages/success">
           <FieldWrapper>
             <FormLabelWrapper>Your Name</FormLabelWrapper>
             <FormInputWrapper name="name" value={name} onChange={evt => {
