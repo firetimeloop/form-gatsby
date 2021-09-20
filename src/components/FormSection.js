@@ -153,7 +153,7 @@ const FormSection = ({ data }) => {
 
   return (
     <FormSectionWrapper>
-      <form method="post" name="Contact Form 2" action="/thankyou.html" 
+      <form method="post" name="Contact Form 2" action="/success" 
         data-netlify-recaptcha="true" netlify-honeypot="hpfield" data-netlify="true">
         <input class="hidden" name="hpfield" />
         <p>
