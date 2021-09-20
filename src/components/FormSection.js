@@ -165,7 +165,7 @@ const FormSection = ({ data }) => {
           </FieldWrapper>
           <FieldWrapper>
             <FormLabelWrapper>Your Phone</FormLabelWrapper>
-            <FormInputWithImageWrapper maxLength="12" minLength="10" placeholder="+1" value={phone} onChange={evt => {
+            <FormInputWithImageWrapper placeholder="+1" value={phone} onChange={evt => {
               setPhone(evt.target.value);
             }} />
           </FieldWrapper>
@@ -175,7 +175,7 @@ const FormSection = ({ data }) => {
               setMessage(evt.target.value);
             }} />
           </FieldWrapper>
-          <Button type="submit" modifiers={["shadow", "big", "bold", "font18"]} disabled={submitting}>
+          <Button type="submit" modifiers={["shadow", "big", "bold", "font18"]}>
             Submit
           </Button>
         </FormWrapper>
