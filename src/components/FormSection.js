@@ -159,19 +159,19 @@ const FormSection = ({ data }) => {
         <FormWrapper method="post" data-netlify="true">
           <FieldWrapper>
             <FormLabelWrapper>Your Name</FormLabelWrapper>
-            <FormInputWrapper value={name} onChange={evt => {
+            <FormInputWrapper name="name" value={name} onChange={evt => {
               setName(evt.target.value);
             }} />
           </FieldWrapper>
           <FieldWrapper>
             <FormLabelWrapper>Your Phone</FormLabelWrapper>
-            <FormInputWithImageWrapper placeholder="+1" value={phone} onChange={evt => {
+            <FormInputWithImageWrapper name="phone" placeholder="+1" value={phone} onChange={evt => {
               setPhone(evt.target.value);
             }} />
           </FieldWrapper>
           <FieldWrapper>
             <FormLabelWrapper>Your Message</FormLabelWrapper>
-            <FormInputAreaWrapper value={message} onChange={evt => {
+            <FormInputAreaWrapper name="message" value={message} onChange={evt => {
               setMessage(evt.target.value);
             }} />
           </FieldWrapper>
