@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Button } from "./Buttons";
 import canadaFlag from '../assets/canada-flag.png';
 import { StaticImage } from "gatsby-plugin-image";
+import { useState } from "react";
 
 const FormSectionWrapper = styled.section`
   display: flex;
@@ -145,26 +146,37 @@ const FormInputAreaWrapper = styled.textarea`
 `;
 
 const FormSection = ({ data }) => {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   return (
     <FormSectionWrapper>
+      <a href="tel:+7-932-400-7522" class="contact-widget__IconLink-kKXKBP fkvUye"><span>+7-932-400-7522</span></a>
       <IntroMainWrapper>
         <SectionTitle>SCHEDULE A CALL</SectionTitle>
         <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
-        <FormWrapper>
+        <FormWrapper method="post">
           <FieldWrapper>
             <FormLabelWrapper>Your Name</FormLabelWrapper>
-            <FormInputWrapper />
+            <FormInputWrapper value={name} onChange={evt => {
+              setName(evt.target.value);
+            }} />
           </FieldWrapper>
           <FieldWrapper>
             <FormLabelWrapper>Your Phone</FormLabelWrapper>
-            <FormInputWithImageWrapper maxLength="12" minLength="10" placeholder="+1"/>
+            <FormInputWithImageWrapper maxLength="12" minLength="10" placeholder="+1" value={phone} onChange={evt => {
+              setPhone(evt.target.value);
+            }} />
           </FieldWrapper>
           <FieldWrapper>
             <FormLabelWrapper>Your Message</FormLabelWrapper>
-            <FormInputAreaWrapper />
+            <FormInputAreaWrapper value={message} onChange={evt => {
+              setMessage(evt.target.value);
+            }} />
           </FieldWrapper>
-          <Button type="submit" modifiers={["shadow", "big", "bold", "font18"]}>
+          <Button type="submit" modifiers={["shadow", "big", "bold", "font18"]} disabled={submitting}>
             Submit
           </Button>
         </FormWrapper>
