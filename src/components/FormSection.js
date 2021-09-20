@@ -153,11 +153,10 @@ const FormSection = ({ data }) => {
 
   return (
     <FormSectionWrapper>
-      <a href="tel:+7-932-400-7522" class="contact-widget__IconLink-kKXKBP fkvUye"><span>+7-932-400-7522</span></a>
       <IntroMainWrapper>
         <SectionTitle>SCHEDULE A CALL</SectionTitle>
         <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
-        <FormWrapper method="post">
+        <FormWrapper method="post" data-netlify="true">
           <FieldWrapper>
             <FormLabelWrapper>Your Name</FormLabelWrapper>
             <FormInputWrapper value={name} onChange={evt => {
