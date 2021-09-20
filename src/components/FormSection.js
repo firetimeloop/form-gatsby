@@ -153,26 +153,21 @@ const FormSection = ({ data }) => {
 
   return (
     <FormSectionWrapper>
-      <form method="post" name="Contact Form 2" action="/success" 
-        data-netlify-recaptcha="true" netlify-honeypot="hpfield" data-netlify="true">
-        <input class="hidden" name="hpfield" />
-        <p>
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" />
-        </p>
-        <p>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" />
-        </p>
-        <p>
-            <label for="comments">Comments:</label><br/>
-            <textarea name="comments" id="comments"></textarea>
-        </p>
-        <div data-netlify-recaptcha="true"></div>
-        <p>
-            <input type="submit" />
-        </p>
-        </form>
+        <form name="contact" method="post">
+          <input type="hidden" name="form-name" value="contact" />
+          <p>
+            <label>Your Name: <input type="text" name="name"/></label>
+          </p>
+          <p>
+            <label>Your Email: <input type="email" name="email"/></label>
+          </p>
+          <p>
+            <label>Message: <textarea name="message"></textarea></label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>,
       {/* <IntroMainWrapper>
         <SectionTitle>SCHEDULE A CALL</SectionTitle>
         <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
