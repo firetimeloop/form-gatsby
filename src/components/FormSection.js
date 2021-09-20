@@ -153,7 +153,7 @@ const FormSection = ({ data }) => {
 
   return (
     <FormSectionWrapper>
-        <form name="contact" method="post">
+        <form name="contact" method="post" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
           <p>
             <label>Your Name: <input type="text" name="name"/></label>
