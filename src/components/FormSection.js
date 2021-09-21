@@ -153,6 +153,8 @@ const FormSection = ({ data }) => {
 
   return (
     <FormSectionWrapper>
+        <SectionTitle>SCHEDULE A CALL</SectionTitle>
+        <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
         <form name="contact" method="post" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
           <p>
@@ -167,7 +169,7 @@ const FormSection = ({ data }) => {
           <p>
             <button type="submit">Send</button>
           </p>
-        </form>,
+        </form>
       {/* <IntroMainWrapper>
         <SectionTitle>SCHEDULE A CALL</SectionTitle>
         <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
