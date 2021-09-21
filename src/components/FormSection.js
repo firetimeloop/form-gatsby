@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "./Buttons";
+
 import canadaFlag from '../assets/canada-flag.png';
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -144,14 +145,22 @@ const FormInputAreaWrapper = styled.textarea`
   min-height: 168px;
 `;
 
-const FormSection = ({ data }) => {
+const FormSection = (props) => {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.setIsModalVisible(true);
+  }
 
   return (
+    <>
     <FormSectionWrapper>
         <IntroMainWrapper>
           <SectionTitle>SCHEDULE A CALL</SectionTitle>
           <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
-          <FormWrapper name="contact" method="post" data-netlify="true">
+          <FormWrapper name="contact" method="post" data-netlify="true" onSubmit={evt => {
+            handleSubmit(evt);
+          }}>
             <input type="hidden" name="form-name" value="contact" />
             <FieldWrapper>
               <FormLabelWrapper htmlFor="contact__name">Your Name</FormLabelWrapper>
@@ -174,6 +183,7 @@ const FormSection = ({ data }) => {
           <StaticImage alt="Mobile app sketch" src="../assets/sketch-of-mobile-app.webp" />
         </ImageWrapper> 
     </FormSectionWrapper>
+    </>
   );
 };
 
