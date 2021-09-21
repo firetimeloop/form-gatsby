@@ -157,18 +157,18 @@ const FormSection = ({ data }) => {
         <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
         <FormWrapper name="contact" method="post" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
-          <p>
+          <FieldWrapper>
             <label htmlFor="contact__name">Your Name: </label><input id="contact__name" type="text" name="name"/>
-          </p>
-          <p>
+          </FieldWrapper>
+          <FieldWrapper>
             <label htmlFor="contact__email">Your Email: </label><input id="contact__email" type="email" name="email"/>
-          </p>
-          <p>
+          </FieldWrapper>
+          <FieldWrapper>
             <label htmlFor="contact__message">Message: </label><textarea id="contact__message" name="message"></textarea>
-          </p>
-          <p>
+          </FieldWrapper>
+          <FieldWrapper>
             <button type="submit">Send</button>
-          </p>
+          </FieldWrapper>
         </FormWrapper>
       {/* <IntroMainWrapper>
         <SectionTitle>SCHEDULE A CALL</SectionTitle>
