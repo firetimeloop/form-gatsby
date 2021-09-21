@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Button } from "./Buttons";
 
@@ -146,11 +146,27 @@ const FormInputAreaWrapper = styled.textarea`
 `;
 
 const FormSection = (props) => {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    props.setIsModalVisible(true);
+  const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
   }
+
+  const handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", "name": name, "phone": phone, "message": message })
+    })
+      .then(() => props.setIsModalVisible(true))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
 
   return (
     <>
@@ -158,21 +174,25 @@ const FormSection = (props) => {
         <IntroMainWrapper>
           <SectionTitle>SCHEDULE A CALL</SectionTitle>
           <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
-          <FormWrapper name="contact" method="post" data-netlify="true" onSubmit={evt => {
-            handleSubmit(evt);
-          }}>
+          <FormWrapper name="contact" method="post" data-netlify="true" onSubmit={handleSubmit}>
             <input type="hidden" name="form-name" value="contact" />
             <FieldWrapper>
               <FormLabelWrapper htmlFor="contact__name">Your Name</FormLabelWrapper>
-              <FormInputWrapper id="contact__name" type="text" name="name"/>
+              <FormInputWrapper id="contact__name" type="text" name="name" onChange={e => {
+                setName(e.target.value);
+              }}/>
             </FieldWrapper>
             <FieldWrapper>
               <FormLabelWrapper htmlFor="contact__phone">Your Phone</FormLabelWrapper>
-              <FormInputWithImageWrapper placeholder="+1" id="contact__phone" type="text" name="phone"/>
+              <FormInputWithImageWrapper placeholder="+1" id="contact__phone" type="text" name="phone" onChange={e => {
+                setPhone(e.target.value);
+              }}/>
             </FieldWrapper>
             <FieldWrapper>
               <FormLabelWrapper htmlFor="contact__message">Your Message</FormLabelWrapper>
-              <FormInputAreaWrapper id="contact__message" name="message"></FormInputAreaWrapper>
+              <FormInputAreaWrapper id="contact__message" name="message" onChange={e => {
+                setMessage(e.target.value);
+              }}></FormInputAreaWrapper>
             </FieldWrapper>
             <FieldWrapper>
               <Button type="submit" modifiers={["shadow", "big", "bold", "font18"]}>Send</Button>
