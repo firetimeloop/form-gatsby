@@ -173,19 +173,19 @@ const FormSection = ({ data }) => {
         <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
         <FormWrapper name="TestForm" method="post" data-netlify="true">
           <FieldWrapper>
-            <FormLabelWrapper for="TestForm__name">Your Name</FormLabelWrapper>
+            <FormLabelWrapper htmlFor="TestForm__name">Your Name</FormLabelWrapper>
             <FormInputWrapper type="text" id="TestForm__name" name="name" value={name} onChange={evt => {
               setName(evt.target.value);
             }} />
           </FieldWrapper>
           <FieldWrapper>
-            <FormLabelWrapper for="TestForm__phone">Your Phone</FormLabelWrapper>
+            <FormLabelWrapper htmlFor="TestForm__phone">Your Phone</FormLabelWrapper>
             <FormInputWithImageWrapper type="number" id="TestForm__phone" name="phone" placeholder="+1" value={phone} onChange={evt => {
               setPhone(evt.target.value);
             }} />
           </FieldWrapper>
           <FieldWrapper>
-            <FormLabelWrapper for="TestForm__text">Your Message</FormLabelWrapper>
+            <FormLabelWrapper htmlFor="TestForm__text">Your Message</FormLabelWrapper>
             <FormInputAreaWrapper type="text" id="TestForm__text"  name="message" value={message} onChange={evt => {
               setMessage(evt.target.value);
             }} />
