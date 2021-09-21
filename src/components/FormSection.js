@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Button } from "./Buttons";
 import canadaFlag from '../assets/canada-flag.png';
 import { StaticImage } from "gatsby-plugin-image";
-import { useState } from "react";
 
 const FormSectionWrapper = styled.section`
   display: flex;
@@ -146,10 +145,6 @@ const FormInputAreaWrapper = styled.textarea`
 `;
 
 const FormSection = ({ data }) => {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-  const [submitting, setSubmitting] = useState(false);
 
   return (
     <FormSectionWrapper>
@@ -164,7 +159,7 @@ const FormSection = ({ data }) => {
             </FieldWrapper>
             <FieldWrapper>
               <FormLabelWrapper htmlFor="contact__phone">Your Phone</FormLabelWrapper>
-              <FormInputWrapper id="contact__phone" type="text" name="phone"/>
+              <FormInputWithImageWrapper placeholder="+1" id="contact__phone" type="text" name="phone"/>
             </FieldWrapper>
             <FieldWrapper>
               <FormLabelWrapper htmlFor="contact__message">Your Message</FormLabelWrapper>
@@ -178,37 +173,6 @@ const FormSection = ({ data }) => {
         <ImageWrapper>
           <StaticImage alt="Mobile app sketch" src="../assets/sketch-of-mobile-app.webp" />
         </ImageWrapper> 
-      {/* <IntroMainWrapper>
-        <SectionTitle>SCHEDULE A CALL</SectionTitle>
-        <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
-        <FormWrapper name="TestForm" method="post" data-netlify="true">
-          <FieldWrapper>
-            <FormLabelWrapper htmlFor="TestForm__name">Your Name</FormLabelWrapper>
-            <FormInputWrapper type="text" id="TestForm__name" name="name" value={name} onChange={evt => {
-              setName(evt.target.value);
-            }} />
-          </FieldWrapper>
-          <FieldWrapper>
-            <FormLabelWrapper htmlFor="TestForm__phone">Your Phone</FormLabelWrapper>
-            <FormInputWithImageWrapper type="number" id="TestForm__phone" name="phone" placeholder="+1" value={phone} onChange={evt => {
-              setPhone(evt.target.value);
-            }} />
-          </FieldWrapper>
-          <FieldWrapper>
-            <FormLabelWrapper htmlFor="TestForm__text">Your Message</FormLabelWrapper>
-            <FormInputAreaWrapper type="text" id="TestForm__text"  name="message" value={message} onChange={evt => {
-              setMessage(evt.target.value);
-            }} />
-          </FieldWrapper>
-          <Button type="submit" modifiers={["shadow", "big", "bold", "font18"]}>
-            Submit
-          </Button>
-        </FormWrapper>
-
-      </IntroMainWrapper>
-      <ImageWrapper>
-        <StaticImage src="../assets/sketch-of-mobile-app.webp" />
-      </ImageWrapper> */}
     </FormSectionWrapper>
   );
 };
