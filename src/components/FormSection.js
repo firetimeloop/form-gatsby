@@ -153,23 +153,28 @@ const FormSection = ({ data }) => {
 
   return (
     <FormSectionWrapper>
-        <SectionTitle>SCHEDULE A CALL</SectionTitle>
-        <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
-        <FormWrapper name="contact" method="post" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
-          <FieldWrapper>
-            <label htmlFor="contact__name">Your Name: </label><input id="contact__name" type="text" name="name"/>
-          </FieldWrapper>
-          <FieldWrapper>
-            <label htmlFor="contact__email">Your Email: </label><input id="contact__email" type="email" name="email"/>
-          </FieldWrapper>
-          <FieldWrapper>
-            <label htmlFor="contact__message">Message: </label><textarea id="contact__message" name="message"></textarea>
-          </FieldWrapper>
-          <FieldWrapper>
-            <button type="submit">Send</button>
-          </FieldWrapper>
-        </FormWrapper>
+        <IntroMainWrapper>
+          <SectionTitle>SCHEDULE A CALL</SectionTitle>
+          <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
+          <FormWrapper name="contact" method="post" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+            <FieldWrapper>
+              <label htmlFor="contact__name">Your Name: </label><input id="contact__name" type="text" name="name"/>
+            </FieldWrapper>
+            <FieldWrapper>
+              <label htmlFor="contact__email">Your Email: </label><input id="contact__email" type="email" name="email"/>
+            </FieldWrapper>
+            <FieldWrapper>
+              <label htmlFor="contact__message">Message: </label><textarea id="contact__message" name="message"></textarea>
+            </FieldWrapper>
+            <FieldWrapper>
+              <button type="submit">Send</button>
+            </FieldWrapper>
+          </FormWrapper>
+        </IntroMainWrapper>
+        <ImageWrapper>
+          <StaticImage src="../assets/sketch-of-mobile-app.webp" />
+        </ImageWrapper> 
       {/* <IntroMainWrapper>
         <SectionTitle>SCHEDULE A CALL</SectionTitle>
         <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
