@@ -153,7 +153,7 @@ const FormSection = ({ data }) => {
 
   return (
     <FormSectionWrapper>
-        {/* <form name="contact" method="post" data-netlify="true">
+        <form name="contact" method="post" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
           <p>
             <label>Your Name: <input type="text" name="name"/></label>
@@ -167,8 +167,8 @@ const FormSection = ({ data }) => {
           <p>
             <button type="submit">Send</button>
           </p>
-        </form>, */}
-      <IntroMainWrapper>
+        </form>,
+      {/* <IntroMainWrapper>
         <SectionTitle>SCHEDULE A CALL</SectionTitle>
         <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
         <FormWrapper name="TestForm" method="post" data-netlify="true">
@@ -198,7 +198,7 @@ const FormSection = ({ data }) => {
       </IntroMainWrapper>
       <ImageWrapper>
         <StaticImage src="../assets/sketch-of-mobile-app.webp" />
-      </ImageWrapper>
+      </ImageWrapper> */}
     </FormSectionWrapper>
   );
 };
