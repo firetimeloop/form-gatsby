@@ -153,7 +153,7 @@ const FormSection = ({ data }) => {
 
   return (
     <FormSectionWrapper>
-        <form name="contact" method="post" data-netlify="true">
+        {/* <form name="contact" method="post" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
           <p>
             <label>Your Name: <input type="text" name="name"/></label>
@@ -167,26 +167,26 @@ const FormSection = ({ data }) => {
           <p>
             <button type="submit">Send</button>
           </p>
-        </form>,
-      {/* <IntroMainWrapper>
+        </form>, */}
+      <IntroMainWrapper>
         <SectionTitle>SCHEDULE A CALL</SectionTitle>
         <LeadParagraph>Start your web development or mobile application today! Schedule a call to get a quote.</LeadParagraph>
-        <FormWrapper name="TestForm" method="post" data-netlify="true" action="/success">
+        <FormWrapper name="TestForm" method="post" data-netlify="true">
           <FieldWrapper>
-            <FormLabelWrapper>Your Name</FormLabelWrapper>
-            <FormInputWrapper name="name" value={name} onChange={evt => {
+            <FormLabelWrapper for="TestForm__name">Your Name</FormLabelWrapper>
+            <FormInputWrapper type="text" id="TestForm__name" name="name" value={name} onChange={evt => {
               setName(evt.target.value);
             }} />
           </FieldWrapper>
           <FieldWrapper>
-            <FormLabelWrapper>Your Phone</FormLabelWrapper>
-            <FormInputWithImageWrapper name="phone" placeholder="+1" value={phone} onChange={evt => {
+            <FormLabelWrapper for="TestForm__phone">Your Phone</FormLabelWrapper>
+            <FormInputWithImageWrapper type="number" id="TestForm__phone" name="phone" placeholder="+1" value={phone} onChange={evt => {
               setPhone(evt.target.value);
             }} />
           </FieldWrapper>
           <FieldWrapper>
-            <FormLabelWrapper>Your Message</FormLabelWrapper>
-            <FormInputAreaWrapper name="message" value={message} onChange={evt => {
+            <FormLabelWrapper for="TestForm__text">Your Message</FormLabelWrapper>
+            <FormInputAreaWrapper type="text" id="TestForm__text"  name="message" value={message} onChange={evt => {
               setMessage(evt.target.value);
             }} />
           </FieldWrapper>
@@ -198,7 +198,7 @@ const FormSection = ({ data }) => {
       </IntroMainWrapper>
       <ImageWrapper>
         <StaticImage src="../assets/sketch-of-mobile-app.webp" />
-      </ImageWrapper> */}
+      </ImageWrapper>
     </FormSectionWrapper>
   );
 };
