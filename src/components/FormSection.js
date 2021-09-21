@@ -159,15 +159,15 @@ const FormSection = ({ data }) => {
           <FormWrapper name="contact" method="post" data-netlify="true">
             <input type="hidden" name="form-name" value="contact" />
             <FieldWrapper>
-              <FormLabelWrapper htmlFor="contact__name">Your Name: </FormLabelWrapper>
+              <FormLabelWrapper htmlFor="contact__name">Your Name</FormLabelWrapper>
               <FormInputWrapper id="contact__name" type="text" name="name"/>
             </FieldWrapper>
             <FieldWrapper>
-              <FormLabelWrapper htmlFor="contact__email">Your Email: </FormLabelWrapper>
-              <FormInputWrapper id="contact__email" type="email" name="email"/>
+              <FormLabelWrapper htmlFor="contact__phone">Your Phone</FormLabelWrapper>
+              <FormInputWrapper id="contact__phone" type="text" name="phone"/>
             </FieldWrapper>
             <FieldWrapper>
-              <FormLabelWrapper htmlFor="contact__message">Message: </FormLabelWrapper>
+              <FormLabelWrapper htmlFor="contact__message">Your Message</FormLabelWrapper>
               <FormInputAreaWrapper id="contact__message" name="message"></FormInputAreaWrapper>
             </FieldWrapper>
             <FieldWrapper>
